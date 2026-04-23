@@ -19,7 +19,7 @@ export default defineConfig({
     video: 'on',
     launchOptions: {
       slowMo: 1000, // Slow down by 100ms to see the test execution more clearly
-    }
+    },
     trace: 'on',
   },
 
