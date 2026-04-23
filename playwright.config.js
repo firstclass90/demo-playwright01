@@ -2,7 +2,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './tests',   // แก้ให้ถูก! ไม่ใช่ ./e2e
+  testDir: './tests',   // 👈 ใส่ตรงนี้
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
