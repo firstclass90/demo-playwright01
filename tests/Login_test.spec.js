@@ -30,3 +30,15 @@ test('TC03 Login with wrong username', async ({page}) => {
     await expect(page.getByRole('alert')).toContainText('Invalid credentials');
     await page.screenshot({path: 'screenshot/error/login-invalid-username.png', fullPage: true});
 });
+
+test('TC04 Login with empty username', async ({page}) => {
+    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+    // Leave username empty
+    await page.fill('input[type="password"]', 'admin123');
+    await page.click('button[type="submit"]');
+    
+    // Verify the "Required" error message below the username field
+    await expect(page.locator('.oxd-input-field-error-message').first()).toHaveText('Required');
+    
+    await page.screenshot({path: 'screenshot/error/login-empty-username.png', fullPage: true});
+});
