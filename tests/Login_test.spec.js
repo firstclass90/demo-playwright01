@@ -19,8 +19,4 @@ test('TC02-Login with invalid credentials', async ({ page }) => {
     //await expect(page.getByRole('alert')).toHaveText('Invalid credentials'); // Choice2
     await expect(page.getByRole('alert')).toContainText('Invalid credentials'); // Choice3
     await page.screenshot({path: 'screenshot/error/login-invalid.png', fullPage: true});
-
-
-
-
 });
